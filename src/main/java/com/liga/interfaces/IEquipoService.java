@@ -3,9 +3,10 @@ package com.liga.interfaces;
 import com.liga.modelo.Equipo;
 import com.liga.modelo.Jugador;
 
-public interface EquipoService {
+import java.util.List;
+
+public interface IEquipoService {
     void crearEquipo(String nombre);
     void agregarJugadorAEquipo(String nombreEquipo, Jugador jugador);
-    void listarEquipos();
-    Equipo buscarEquipo(String nombre);
+    List<Equipo> listarEquipos();
 }

@@ -5,10 +5,10 @@ public abstract class Jugador {
     protected int edad;
     protected int goles;
 
-    public Jugador(String nombre, int edad, int goles) {
+    public Jugador(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
-        this.goles = goles;
+        this.goles = 0;
     }
 
     public abstract String getTipo();
@@ -25,12 +25,12 @@ public abstract class Jugador {
         return goles;
     }
 
-    public void sumarGol() {
-        this.goles++;
+    public void anotarGol() {
+        goles++;
     }
 
     @Override
     public String toString() {
-        return nombre + " (" + getTipo() + ") - Edad: " + edad + ", Goles: " + goles;
+        return getTipo() + ": " + nombre + " (" + edad + " años) - Goles: " + goles;
     }
 }

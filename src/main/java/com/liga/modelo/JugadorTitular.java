@@ -3,9 +3,13 @@ package com.liga.modelo;
 public class JugadorTitular extends Jugador {
     private int minutosJugados;
 
-    public JugadorTitular(String nombre, int edad, int goles, int minutosJugados) {
-        super(nombre, edad, goles);
-        this.minutosJugados = minutosJugados;
+    public JugadorTitular(String nombre, int edad) {
+        super(nombre, edad);
+        this.minutosJugados = 0;
+    }
+
+    public void agregarMinutos(int minutos) {
+        this.minutosJugados += minutos;
     }
 
     public int getMinutosJugados() {
@@ -15,10 +19,5 @@ public class JugadorTitular extends Jugador {
     @Override
     public String getTipo() {
         return "Titular";
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + " - Minutos jugados: " + minutosJugados;
     }
 }

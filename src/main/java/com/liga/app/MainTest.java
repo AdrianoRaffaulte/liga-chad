@@ -1,36 +1,33 @@
 package com.liga.app;
 
-import com.liga.modelo.Jugador;
-import com.liga.modelo.JugadorTitular;
-import com.liga.modelo.JugadorSuplente;
-import com.liga.interfaces.JugadorService;
-import com.liga.servicios.JugadorServiceImpl;
-import com.liga.interfaces.EquipoService;
-import com.liga.servicios.EquipoServiceImpl;
+import com.liga.modelo.*;
+import com.liga.servicios.*;
 
 public class MainTest {
     public static void main(String[] args) {
-        JugadorService jugadorService = new JugadorServiceImpl();
-        EquipoService equipoService = new EquipoServiceImpl();
+        JugadorService jugadorService = new JugadorService();
+        EquipoService equipoService = new EquipoService();
 
         // Crear jugadores
-        Jugador juan = new JugadorTitular("Julian", 21, 5, 40);
-        Jugador pedro = new JugadorSuplente("Gonzalo", 20, 3, 2);
+        Jugador juan = new JugadorTitular("Julian", 21);
+        Jugador pedro = new JugadorSuplente("Gonzalo", 20);
 
         jugadorService.registrarJugador(juan);
         jugadorService.registrarJugador(pedro);
 
-        // Listar jugadores
-        System.out.println("Jugadores registrados:");
         jugadorService.listarJugadores();
 
-        // Crear equipo y agregar jugadores
+        // Crear equipos
         equipoService.crearEquipo("INFO FC");
         equipoService.crearEquipo("MAVEN FC");
+
+        // Asignar jugadores
         equipoService.agregarJugadorAEquipo("INFO FC", juan);
         equipoService.agregarJugadorAEquipo("MAVEN FC", pedro);
 
         System.out.println("\nEquipos registrados:");
-        equipoService.listarEquipos();
+        for (Equipo e : equipoService.listarEquipos()) {
+            System.out.println(e);
+        }
     }
 }

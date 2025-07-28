@@ -1,25 +1,23 @@
 package com.liga.modelo;
 
 public class JugadorSuplente extends Jugador {
+    private int partidosIngresado;
 
-    private int partidosDesdeElBanco;
-
-    public JugadorSuplente(String nombre, int edad, int goles, int partidosDesdeElBanco) {
-        super(nombre, edad, goles);
-        this.partidosDesdeElBanco = partidosDesdeElBanco;
+    public JugadorSuplente(String nombre, int edad) {
+        super(nombre, edad);
+        this.partidosIngresado = 0;
     }
 
-    public int getPartidosDesdeElBanco() {
-        return partidosDesdeElBanco;
+    public void ingresarPartido() {
+        this.partidosIngresado++;
+    }
+
+    public int getPartidosIngresado() {
+        return partidosIngresado;
     }
 
     @Override
     public String getTipo() {
         return "Suplente";
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + " - Partidos desde el banco: " + partidosDesdeElBanco;
     }
 }
