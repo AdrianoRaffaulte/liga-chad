@@ -1,3 +1,4 @@
+Raffaulte Adriano
 Commit N°5 - Programa funcional desde la consola
 Abrir el proyecto en VS Code (u otro IDE compatible con Maven y Java).
 
@@ -28,3 +29,5 @@ Al ejecutar, se mostrarán por consola las 12 funcionalidades implementadas seg�
 Esta versión no cuenta con un menú interactivo para que el usuario cargue datos desde consola.
 En su lugar, los datos de ejemplo están predefinidos dentro del MainTest.java.
 Se planea incluir esta funcionalidad en un próximo commit usando LigaChadApp.java.
+DIAGRAMA DE CLASES
+<img width="1335" height="844" alt="Diagrama-Clases-Adriano" src="https://github.com/user-attachments/assets/5369d0a9-3ac3-450a-b46c-db2f3adc2f38" />
