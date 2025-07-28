@@ -37,6 +37,22 @@ public class Equipo {
         return (double) totalGoles() / jugadores.size();
     }
 
+    public JugadorTitular titularConMasMinutos() {
+    JugadorTitular titularConMas = null;
+
+    for (Jugador j : jugadores) {
+        if (j instanceof JugadorTitular) {
+            JugadorTitular titular = (JugadorTitular) j;
+            if (titularConMas == null || titular.getMinutosJugados() > titularConMas.getMinutosJugados()) {
+                titularConMas = titular;
+            }
+        }
+    }
+
+    return titularConMas;
+}
+
+
     @Override
     public String toString() {
         return "Equipo: " + nombre + " | Goles: " + totalGoles() + " | Jugadores: " + jugadores.size();

@@ -87,5 +87,19 @@ public class MainTest {
             }
         }
 
+        // FUNCIONALIDAD 11: Mostrar jugador titular con más minutos jugados
+        System.out.println("\n--- FUNCIONALIDAD 11: Titular con más minutos jugados ---");
+        for (Equipo e : equipoService.listarEquipos()) {
+            JugadorTitular t = e.titularConMasMinutos();
+            if (t != null) {
+                System.out.println("Equipo: " + e.getNombre() + " - Titular con más minutos: " + t.getNombre() + " (" + t.getMinutosJugados() + " min)");
+            }
+        }
+
+        // FUNCIONALIDAD 12 Exportar en un archivo .csv los jugadores (Titulares y suplentes) de un equipo dado.
+        ExportadorCSVService exportador = new ExportadorCSVService();
+        Equipo equipo = equipoService.listarEquipos().get(0);
+        exportador.exportarJugadoresDeEquipo(equipo);
+
     }
 }

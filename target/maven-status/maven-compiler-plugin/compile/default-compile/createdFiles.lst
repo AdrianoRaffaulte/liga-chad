@@ -1,1 +1,14 @@
+com\liga\interfaces\IJugadorService.class
+com\liga\servicios\PartidoService.class
+com\liga\servicios\ExportadorCSVService.class
+com\liga\app\MainTest.class
+com\liga\servicios\EquipoService.class
+com\liga\modelo\Equipo.class
+com\liga\modelo\JugadorTitular.class
+com\liga\interfaces\IPartidoService.class
+com\liga\modelo\Partido.class
+com\liga\modelo\JugadorSuplente.class
+com\liga\modelo\Jugador.class
+com\liga\interfaces\IEquipoService.class
+com\liga\servicios\JugadorService.class
 com\liga\App.class
